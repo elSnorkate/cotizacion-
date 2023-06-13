@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pdf cotizacion</title>
+    <link rel="stylesheet" href="pdf_styles.css">
+</head>
+<body>
+    <div class="imgs" id="first">
+        <img src="../pdf/img/1.png" alt="header">
+    </div>
+    <div id="first_text">
+        <table>
+            <tr>
+                <td><strong>Empresa:</strong></td>
+                <td><span id="input-empresa"></span></td>
+            </tr>
+            <tr>
+                <td><strong>RUC:</strong></td>
+                <td><span id="input-ruc"></span></td>
+            </tr>
+            <tr>
+                <td><strong>Razon Social:</strong></td>
+                <td><span id="input-rsocial"></span></td>
+            </tr>
+            <tr>
+                <td><strong>Correo Electronico:</strong></td>
+                <td><span id="input-email"></span></td>
+            </tr>
+            <tr>
+                <td><strong>Numero de telefono:</strong></td>
+                <td><span id="input-numero"></span></td>
+            </tr>
+            <tr>
+                <td><strong>Fecha de cotizacion:</strong></td>
+                <td><span id="input-cotizacion"></span></td>
+            </tr>
+            <tr>
+                <td><strong>Fecha de vencimiento:</strong></td>
+                <td><span id="input-vencimiento"></span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="imgs" id="second">
+        <img src="../pdf/img/2.png" alt="ecoinfo">
+    </div>
+    <div class="imgs" id="third">
+        <img src="../pdf/img/3.png" alt="alwaysincontact">
+    </div>
+    <div class="imgs" id="forth">
+        <img src="../pdf/img/4.png" alt="benefits">
+    </div>
+    <div class="imgs" id="fifth">
+        <img src="../pdf/img/5.png" alt="ecoinfo">
+    </div>
+    <div class="imgs" id="sixth">
+        <img src="../pdf/img/6.png" alt="alwaysincontact">
+    </div>
+    <div class="imgs" id="seventh">
+        <img src="../pdf/img/7.png" alt="benefits">
+    </div>
+    <div class="imgs" id="eighth">
+        <img src="../pdf/img/8.png" alt="benefits">
+    </div>
+    <div class="imgs" id="ninth">
+        <img src="../pdf/img/9.png" alt="ecoinfo">
+    </div>
+    <div class="imgs" id="tenth">
+        <img src="../pdf/img/10.png" alt="alwaysincontact">
+    </div>
+    <div class="imgs" id="eleventh">
+        <img src="../pdf/img/11.png" alt="benefits">
+    </div>
+    <div class="imgs" id="twelfth">
+        <img src="../pdf/img/12.png" alt="alwaysincontact">
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script>
+        function getQueryParams(url) {
+            var params = {};
+            var parser = document.createElement('a');
+            parser.href = url;
+            var query = parser.search.substring(1);
+            var vars = query.split('&');
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split('=');
+                params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+            }
+            return params;
+        }
+    
+        var queryParams = getQueryParams(window.location.href);
+    
+        document.getElementById('input-empresa').textContent = queryParams.empresa || '';
+        document.getElementById('input-ruc').textContent = queryParams.ruc || '';
+        document.getElementById('input-rsocial').textContent = queryParams.rsocial || '';
+        document.getElementById('input-email').textContent = queryParams.email || '';
+        document.getElementById('input-numero').textContent = queryParams.numero || '';
+        document.getElementById('input-cotizacion').textContent = queryParams.cotizacion || '';
+        document.getElementById('input-vencimiento').textContent = queryParams.vencimiento || '';
+    </script>
+</body>
+</html>
+

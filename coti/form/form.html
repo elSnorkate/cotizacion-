@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papeat cotizacion</title>
+    <link rel="stylesheet" href="form_styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+            Formulario de cotizacion
+        </div>
+        <div class="form">
+            <form action="pdf.html" method="GET" target="_blank" >
+                <div class="input_field" id="empresaInput">
+                    <label>Empresa:</label>
+                    <input type="text" class="input" name="empresa">
+                </div>
+                <div class="input_field" id="rucInput">
+                    <label>R.U.C:</label>
+                    <input type="text" class="input" name="ruc" maxlength="11">
+                </div>
+                <div class="input_field" id="rsocialInput">
+                    <label>Razon social:</label>
+                    <input type="text" class="input" name="rsocial">
+                </div>
+                <div class="input_field" id="cotizacionInput">
+                    <label>Fecha de inicio de cotizacion:</label>
+                    <input type="date" class="input" name="cotizacion">
+                </div>
+                <div class="input_field" id="vencimientoInput">
+                    <label>Fecha de fin de cotizacion:</label>
+                    <input type="date" class="input" name="vencimiento">
+                </div>
+                <div class="input_field" id="emailInput">
+                    <label>Correo electronico:</label>
+                    <input type="text" class="input" name="email">
+                </div>
+                <div class="input_field" id="numeroInput">
+                    <label>Numero de telefono:</label>
+                    <input type="text" class="input" name="numero">
+                </div>
+                <div class="inputfield">
+                    <input type="submit" value="Generar PDF" class="btn" id="generate-pdf-btn">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script>
+    function sendValuesToPDF(event) {
+        event.preventDefault(); 
+
+        var empresa = document.getElementById("empresaInput").querySelector("input").value;
+        var ruc = document.getElementById("rucInput").querySelector("input").value;
+        var rsocial = document.getElementById("rsocialInput").querySelector("input").value;
+        var cotizacion = document.getElementById("cotizacionInput").querySelector("input").value;
+        var vencimiento = document.getElementById("vencimientoInput").querySelector("input").value;
+        var email = document.getElementById("emailInput").querySelector("input").value;
+        var numero = document.getElementById("numeroInput").querySelector("input").value;
+    
+        var pdf = new jsPDF();
+    
+        pdf.text("Empresa: " + empresa, 10, 10);
+        pdf.text("RUC: " + ruc, 10, 20);
+        pdf.text("Razon Social: " + rsocial, 10, 30);
+        pdf.text("Correo Electronico: " + email, 10, 40);
+        pdf.text("Numero de telefono: " + numero, 10, 50);
+        pdf.text("Fecha de cotizacion: " + cotizacion, 10, 60);
+        pdf.text("Fecha de vencimiento: " + vencimiento, 10, 70);
+
+        pdf.save("cotizacion.pdf");
+    }
+</script>
+    
+    
+    
+</body>
+</html>
