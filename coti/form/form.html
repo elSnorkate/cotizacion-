@@ -13,11 +13,7 @@
             Formulario de cotizacion
         </div>
         <div class="form">
-            <form action="pdf.html" method="GET" target="_blank" >
-                <div class="input_field" id="empresaInput">
-                    <label>Empresa:</label>
-                    <input type="text" class="input" name="empresa">
-                </div>
+            <form action="pdf.html" method="GET"  target="_blank">
                 <div class="input_field" id="rucInput">
                     <label>R.U.C:</label>
                     <input type="text" class="input" name="ruc" maxlength="11">
@@ -53,7 +49,6 @@
     function sendValuesToPDF(event) {
         event.preventDefault(); 
 
-        var empresa = document.getElementById("empresaInput").querySelector("input").value;
         var ruc = document.getElementById("rucInput").querySelector("input").value;
         var rsocial = document.getElementById("rsocialInput").querySelector("input").value;
         var cotizacion = document.getElementById("cotizacionInput").querySelector("input").value;
@@ -63,7 +58,6 @@
     
         var pdf = new jsPDF();
     
-        pdf.text("Empresa: " + empresa, 10, 10);
         pdf.text("RUC: " + ruc, 10, 20);
         pdf.text("Razon Social: " + rsocial, 10, 30);
         pdf.text("Correo Electronico: " + email, 10, 40);

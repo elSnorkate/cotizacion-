@@ -9,13 +9,9 @@
 <body>
     <div class="imgs" id="first">
         <img src="../pdf/img/1.png" alt="header">
-    </div>
+    </div> 
     <div id="first_text">
         <table>
-            <tr>
-                <td><strong>Empresa:</strong></td>
-                <td><span id="input-empresa"></span></td>
-            </tr>
             <tr>
                 <td><strong>RUC:</strong></td>
                 <td><span id="input-ruc"></span></td>
@@ -74,7 +70,8 @@
     </div>
     <div class="imgs" id="twelfth">
         <img src="../pdf/img/12.png" alt="alwaysincontact">
-    </div>
+</body>
+</html>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script>
         function getQueryParams(url) {
@@ -92,7 +89,6 @@
     
         var queryParams = getQueryParams(window.location.href);
     
-        document.getElementById('input-empresa').textContent = queryParams.empresa || '';
         document.getElementById('input-ruc').textContent = queryParams.ruc || '';
         document.getElementById('input-rsocial').textContent = queryParams.rsocial || '';
         document.getElementById('input-email').textContent = queryParams.email || '';
@@ -100,6 +96,4 @@
         document.getElementById('input-cotizacion').textContent = queryParams.cotizacion || '';
         document.getElementById('input-vencimiento').textContent = queryParams.vencimiento || '';
     </script>
-</body>
-</html>
-
+    
