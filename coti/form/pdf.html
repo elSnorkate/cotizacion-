@@ -88,9 +88,14 @@
         }
     
         var queryParams = getQueryParams(window.location.href);
+
+        var inputRsocial = queryParams.rsocial || '';
+
+        var capitalizedRsocial = inputRsocial.toUpperCase();
+
     
         document.getElementById('input-ruc').textContent = queryParams.ruc || '';
-        document.getElementById('input-rsocial').textContent = queryParams.rsocial || '';
+        document.getElementById('input-rsocial').textContent = capitalizedRsocial;
         document.getElementById('input-email').textContent = queryParams.email || '';
         document.getElementById('input-numero').textContent = queryParams.numero || '';
         document.getElementById('input-cotizacion').textContent = queryParams.cotizacion || '';
