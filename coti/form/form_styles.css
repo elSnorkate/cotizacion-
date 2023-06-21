@@ -76,3 +76,6 @@ body{
 .wrapper .form .input_field .btn:hover{
     background-color: #FAAE02;
 } 
+#rsocialInput{
+    text-transform: capitalize;
+}
